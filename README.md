@@ -1,1 +1,1 @@
-https://rayrayley.github.io/zakrivayuschiy-teg-f
+https://github.com/RayRayLey/zakrivayuschiy-teg-f
