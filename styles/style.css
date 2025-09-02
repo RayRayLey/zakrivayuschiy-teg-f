@@ -50,18 +50,11 @@
 
 /* карточки */
 
-.card-list {
-
-}
-
 .card {
   background-color: var(--main-color);
   border: 2px solid var(--accent-color);
   margin-bottom: 50px;
   
-}
-
-.card__item {
 }
 
 .card__title {
