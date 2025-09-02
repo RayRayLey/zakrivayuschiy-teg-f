@@ -10,18 +10,20 @@
 
 */
 
-@keyframes pulse { 
+@keyframes pulse {
+
     from {
         transform: scale(1);
-
     }
     
      to {
         transform: scale(1.25);
     }
+
 }
 
 @keyframes shiny {
+
     from {
         opacity: 0;
     }
@@ -29,4 +31,5 @@
      to {
         opacity: 1;
     }
+    
 }

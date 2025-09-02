@@ -254,7 +254,7 @@
   inline-size: clamp(21.313rem, 21.048rem + 1.127vw, 22.063rem);
 }
 
-body:has(.dialog[open]){
+body:has(.dialog[open]) {
   overflow: hidden;
 }
 
