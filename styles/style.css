@@ -12,7 +12,7 @@
 
 .page {
   font-family: var(--main-font);
-  font-variation-settings: 'wght' var(--main-weight);
+  font-variation-settings: 'wght' var(--main-weight, 410);
   min-inline-size: 320px;
   min-block-size: 100dvb;
   background-image: var(--backdrop);
@@ -30,8 +30,8 @@
 
 .header {
   font-family: var(--pixel-font);
-  background-color: var(--main-color);
-  border: 2px solid var(--accent-color);
+  background-color: var(--main-color, #fff);
+  border: 2px solid var(--accent-color, #000);
   padding: clamp(7.625rem, 7.449rem + 0.751vw, 8.125rem) 0;
   text-align: center;
   margin-top: 100px;
@@ -50,22 +50,22 @@
 /* карточки */
 
 .card {
-  background-color: var(--main-color);
-  border: 2px solid var(--accent-color);
+  background-color: var(--main-color, #fff);
+  border: 2px solid var(--accent-color, #000);
   margin-bottom: 50px;
   
 }
 
 .card__title {
-  font-variation-settings: 'wght' var(--title-weight);
+  font-variation-settings: 'wght' var(--title-weight, 715);
   padding: 4px 10px;
 }
 
 .image-container {
   display: flex;
   position: relative;
-  border-bottom: 2px solid var(--accent-color);
-  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color, #000);
+  border-top: 2px solid var(--accent-color, #000);
 }
 
 .card__image {
@@ -73,7 +73,7 @@
 }
 
 .card__image-label {
-  color: var(--accent-color);
+  color: var(--accent-color, #000);
   position: absolute;
   font-family: var(--pixel-font);
   font-size: 14px;
@@ -81,14 +81,14 @@
   right: 25px;
   mix-blend-mode: hard-light;
   opacity: 50%;
-  text-shadow: 1px var(--main-color);
-  -webkit-text-stroke: 1px var(--main-color);
+  text-shadow: 1px var(--main-color, #fff);
+  -webkit-text-stroke: 1px var(--main-color, #fff);
 }
 
-@supports (text-stroke: 1px var(--main-color)) or (-webkit-text-stroke: 1px var(--main-color)) {
+@supports (text-stroke: 1px var(--main-color, #fff)) or (-webkit-text-stroke: 1px var(--main-color, #fff)) {
   .card__image-label {
-    -webkit-text-stroke: 1px var(--main-color);
-    text-stroke: 1px var(--main-color);
+    -webkit-text-stroke: 1px var(--main-color, #fff);
+    text-stroke: 1px var(--main-color, #fff);
     text-shadow: none;
   }
 }
@@ -107,8 +107,8 @@
   cursor: pointer;
   font-family: var(--pixel-font);
   font-size: 14px;
-  background-color: var(--main-color);
-  outline: 2px solid var(--accent-color);
+  background-color: var(--main-color, #fff);
+  outline: 2px solid var(--accent-color, #000);
 }
 
 .button-container {
@@ -151,7 +151,7 @@
 }
 
 .button:focus-visible {
-  box-shadow: 2px 2px var(--accent-color);
+  box-shadow: 2px 2px var(--accent-color, #000);
   transition: 0.3s ease;
 }
 
@@ -162,7 +162,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--main-color);
+  background-color: var(--main-color, #fff);
   mix-blend-mode: difference;
   transition: 0.5s ease-in-out;
   transform-origin: left;
@@ -176,7 +176,7 @@
 
 .card__icon-button:focus-visible {
   transition: 0.3s ease;
-  outline-color: var(--accent-color);
+  outline-color: var(--accent-color, #000);
 }
 
 /* кнопка сердце */
@@ -205,37 +205,37 @@
 }
 
 .like-icon:hover .core {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #000);
   transition: fill 0.3s 0s linear;
 }
 
 .like-icon:hover .main-body {
-  fill: var(--contour-color);
+  fill: var(--contour-color, #000);
   transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon:active .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #FF0000);
   transition: fill 0.3s 0s linear;
 }
 
 .like-icon:active .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #FF0000);
   transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #FF0000);
   transition: fill 0.3s 0s linear;
 }
 
 .like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #FF0000);
   transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
+  fill: var(--animation-fill-color, #FF0000);
   transition: fill 0.3s 0.06s linear;
 }
 
@@ -258,7 +258,7 @@
   padding: 0;
   max-inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
   border: none;
-  outline: 2px solid var(--accent-color);
+  outline: 2px solid var(--accent-color, #000);
 }
 
 .dialog[open] .dialog__form {
