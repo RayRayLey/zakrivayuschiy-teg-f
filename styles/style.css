@@ -39,12 +39,12 @@
 }
 
 .header__title {
-  font-size: 3.063rem;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-bottom: 20px;
 }
 
 .header__subtitle {
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   font-family: var(--pixel-font);
 }
 
@@ -82,8 +82,19 @@
   right: 25px;
   mix-blend-mode: hard-light;
   opacity: 50%;
+  text-shadow: 1px var(--main-color);
   -webkit-text-stroke: 1px var(--main-color);
 }
+
+@supports (text-stroke: 1px var(--main-color)) or (-webkit-text-stroke: 1px var(--main-color)) {
+  .card__image-label {
+    -webkit-text-stroke: 1px var(--main-color);
+    text-stroke: 1px var(--main-color);
+    text-shadow: none;
+  }
+}
+
+
 
 .card__text {
   margin: 25px;
@@ -240,11 +251,11 @@
 
 /* всплываюшее окно */
 
-.dialog {
+.dialog__form {
   display: none;
 }
 
-.dialog[open] {
+.dialog[open] .dialog__form {
   display: grid;
   grid-template-columns: 39px 1fr;
   align-items: center;
@@ -311,12 +322,6 @@ body:has(.dialog[open]) {
 }
 
 /* адаптив */
-
-@supports (text-stroke: 1px var(--main-color)) {
-  .card__image-label {
-    text-stroke: 1px var(--main-color);
-  }
-}
 
 @media (width <= 375px) {
   .save__button {
