@@ -254,6 +254,13 @@
   display: none;
 }
 
+.dialog {
+  padding: 0;
+  max-inline-size: clamp(21.3125rem, 21.0484rem + 1.1268vw, 22.0625rem);
+  border: none;
+  outline: 2px solid var(--accent-color);
+}
+
 .dialog[open] .dialog__form {
   display: grid;
   grid-template-columns: 39px 1fr;
@@ -331,7 +338,11 @@ body:has(.dialog[open]) {
     inline-size: 28px;
   }
 
-  .dialog[open] {
+  .dialog[open] .dialog__form {
     padding: 30px 40px;
+  }
+
+  .dialog__text {
+    inline-size: 202px;
   }
 }
